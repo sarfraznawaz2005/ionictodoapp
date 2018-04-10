@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      <ion-icon name="book"></ion-icon> TodoApp
+    </ion-title>
+
+   
+    <ion-buttons end>
+      <ion-badge>{{todos.length}}</ion-badge>
+    </ion-buttons>
+ 
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-fab top right edge>
+    <button ion-fab mini (click)="addTodo()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-list>
+
+    <ion-item *ngFor="let todo of todos">
+      <ion-label>{{todo.description}}</ion-label>
+
+      <button ion-button item-right color="danger" (click)="deleteTodo(todo)">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+
+    </ion-item>
+
+  </ion-list>
+
+
+  <ion-fab bottom left>
+    <button ion-fab mini (click)="about()">
+      <ion-icon name="alert"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>
